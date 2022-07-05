@@ -1,0 +1,23 @@
+
+RewriteEngine On
+RewriteRule "index.html" "index.php"
+
+RewriteRule "san-pham.html" "index.php?view=product"
+RewriteRule "gioi-thieu.html" "index.php?view=gioithieu"
+RewriteRule "lien-he.html" "index.php?view=lienhe"
+
+RewriteRule "gio-hang.html" "index.php?view=cart"
+RewriteRule "^([a-zA-Z0-9_-]+).html$" "index.php?view=$1"
+RewriteRule "^([0-9]+)/([0-9]+)-([a-zA-Z0-9_-]+).html$" "index.php?view=product_type&$1&id=$2&product_type=$3" 
+RewriteRule "^danh-muc-san-pham/san-pham-moi.html$" "index.php?view=product&product=new" 
+RewriteRule "^danh-muc-san-pham/san-pham-xem-nhieu.html$" "index.php?view=product&product=view" 
+RewriteRule "^danh-muc-san-pham/san-pham-ban-chay.html$" "index.php?view=product&product=sale" 
+RewriteRule "^danh-muc-san-pham/san-pham-khuyen-mai.html$" "index.php?view=product&product=discount" 
+RewriteRule "^san-pham/([a-zA-Z0-9_-]+)-([0-9]+).html$" "?view=single-product&name_product=$1&id=$2" 
+RewriteRule "([a-zA-Z0-9_-]+)/dang-ky.html$" "?notice=register&view=$1" 
+
+<files config.php>
+order allow,deny
+deny from all
+</files>
+Options All -Indexes
